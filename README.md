@@ -10,15 +10,20 @@ options, and construct a call to sourceanalyzer.
 
 # INSTALLATION & SETUP:
 
-1. Add the following property to the Fortify settings file (<fortify_install_dir>\Core\config\fortify-sca.properties):
-    com.fortify.sca.compilers.armcc  = com.fortify.sca.util.compilers.UnsupportedCCompiler
+1. Add the following property to the Fortify settings file (`<fortify_install_dir>\Core\config\fortify-sca.properties`):
 
+    `com.fortify.sca.compilers.armcc  = com.fortify.sca.util.compilers.UnsupportedCCompiler`
+   
 2. In the same properties file, comment the following property:
-    #com.fortify.sca.compilers.armcc  = com.fortify.sca.util.compilers.ArmCcCompiler
-3. Copy this script (fsca-translate) to the same directory as where the armcc.exe
+
+   `#com.fortify.sca.compilers.armcc  = com.fortify.sca.util.compilers.ArmCcCompiler`
+   
+3. Copy this script (`fsca-translate.ps1`) to the same directory as where the armcc.exe
     is located. Ensure that directory directory has also been added to the system's
     PATH environment variable.
+   
 4. Restart uVision.
+
 5. Open uVision and populate the pre-build, pre-compile, and post-build scripts 
     that need to be run in the "Options for target" settings.
    - Example command to be provided to uVisions "Before Compile C/C++ File" script:
@@ -28,7 +33,7 @@ options, and construct a call to sourceanalyzer.
    - Example command to be provided to uVisions "After Build/Rebuild" script:
      - `sourceanalyzer -b CHANGE_ME_BUILD_ID -scan -f scan.fpr`
 
-6.) Run a "Rebuild" and wait for uVision to complete the translation and scan of
+6. Run a "Rebuild" and wait for uVision to complete the translation and scan of
     the project.
 
 # Other Important Notes:
