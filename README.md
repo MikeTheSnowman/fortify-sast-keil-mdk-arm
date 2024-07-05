@@ -31,3 +31,10 @@ options, and construct a call to sourceanalyzer.
 6.) Run a "Rebuild" and wait for uVision to complete the translation and scan of
     the project.
 
+# Other Important Notes:
+- This new integration will not work with versions of Fortify that are older than 24.2.
+- The new integration uses a new Fortify feature that's currently only available with Fortify version 24.2. This new Fortify feature is not documented and is currently not supported.
+- This integration only requires the use of one powershell script to be "installed".
+- I've only tested this integration with about 5 simple projects. I do not consider this to be a lot of testing, and because of that, there still might be bugs.
+- The speed of completing the "translation step" is still slow. This is because sourceanalyzer gets called on every source file to compile and translate it.
+- Scan results with this new integration method and because the scan is being done with a much newer version of Fortify, the scan results have more accurate findings.
