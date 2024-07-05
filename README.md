@@ -21,9 +21,12 @@ options, and construct a call to sourceanalyzer.
 4. Restart uVision.
 5. Open uVision and populate the pre-build, pre-compile, and post-build scripts 
     that need to be run in the "Options for target" settings.
-    # "Before Compile C/C++ File" script:
-    Example command to be provided to uVisions "Before Compile C/C++ File" script:
-    powershell -C C:\Keil-5.18a\Keil_v5\ARM\ARMCC\bin\fsca-translate.ps1 "CHANGE_ME_BUILD_ID" !F $L
+   - Example command to be provided to uVisions "Before Compile C/C++ File" script:
+     - `powershell -C C:\Keil-5.18a\Keil_v5\ARM\ARMCC\bin\fsca-translate.ps1 "CHANGE_ME_BUILD_ID" !F $L`
+   - Example command to be provided to uVisions "Before Build/Rebuild" script:
+     - `sourceanalyzer -b CHANGE_ME_BUILD_ID -clean`
+   - Example command to be provided to uVisions "After Build/Rebuild" script:
+     - `sourceanalyzer -b CHANGE_ME_BUILD_ID -scan -f scan.fpr`
 
 6.) Run a "Rebuild" and wait for uVision to complete the translation and scan of
     the project.
