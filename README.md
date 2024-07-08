@@ -19,7 +19,7 @@ options, and construct a call to sourceanalyzer.
    `#com.fortify.sca.compilers.armcc  = com.fortify.sca.util.compilers.ArmCcCompiler`
    
 3. Copy this script (`fsca-translate.ps1`) to the same directory as where the armcc.exe
-    is located. Ensure that directory directory has also been added to the system's
+    is located. Ensure that directory has also been added to the system's
     PATH environment variable.
    
 4. Restart uVision.
